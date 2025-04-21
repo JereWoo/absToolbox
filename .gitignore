@@ -1,3 +1,6 @@
+vars/vault.py
+!vars/vault.py.template
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

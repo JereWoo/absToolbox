@@ -1,17 +1,25 @@
 # This script splits genres that contain ", " into multiple genres so you can more easily search for a single tag.
+import sys
+from pathlib import Path
 import base64
-
 import requests
 
-# Configuration constants
+
+# Add vars directory to sys.path to import vars and secrets
+sys.path.append(str(Path(__file__).parent.parent / 'vars'))
+
+# Import default configuration constants
+from config import LIBRARY_IDS, SKIP_GENRES
+from vault import API_KEY, ABS_HOST
+
+
+# Example configuration constants overrides (uncomment to use)
+
+# LIBRARY_IDS = []  # Leave empty to process all libraries
+# SKIP_GENRES = []  # Genres to skip
+
 
 # PLEASE MAKE A BACKUP BEFORE RUNNING THIS SCRIPT!
-
-ABS_HOST = ""  # AudiobookShelf Host URL
-API_KEY = ""
-LIBRARY_IDS = []  # Leave empty to process all libraries
-SKIP_GENRES = ['Mystery, Thriller & Suspense']  # Genres to skip
-
 
 ###### Code ######
 

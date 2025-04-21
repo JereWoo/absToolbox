@@ -1,10 +1,14 @@
 # This scripts deletes all authors that have no books associated with them.
 import requests
+import sys
+from pathlib import Path
 
+sys.path.append(str(Path(__file__).parent.parent / 'vars'))
+
+from vault import API_KEY, ABS_HOST
 # Configuration constants
-ABS_HOST = ""  # AudiobookShelf Host URL
+
 LIBRARY_ID = None  # Leave None to process all libraries you have
-API_KEY = ""  # API Key from user settings
 DELETE_WITHOUT_CONFIRMATION = False  # Set to True to delete authors without confirmation
 
 
